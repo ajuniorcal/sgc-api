@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -15,19 +16,20 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ENDERECO")
 	private Long id;
-
+	
 	@Size(max = 8)
 	@Column(name = "CEP")
 	private String cep;
-
+	
 	@Size(max = 255)
 	@Column(name = "PAIS")
 	private String pais;
-
+	
 	@Size(max = 255)
 	@Column(name = "ESTADO")
 	private String estado;
 
+	@NotNull
 	@Size(max = 255)
 	@Column(name = "CIDADE")
 	private String cidade;
